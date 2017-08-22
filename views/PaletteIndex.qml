@@ -1,7 +1,8 @@
 import QtQuick 2.0
+import "../models"
 
 Rectangle {
-    property var paletteIndexModel
+    property PaletteIndexModel paletteIndexModel
 
     color: "#B0C2DC"
     ListView {

@@ -3,7 +3,7 @@ import "../models"
 import "../modules/helpers.js" as Helpers
 
 Rectangle {
-    property var bookmarksModel
+    property BookmarksModel bookmarksModel
 
     color: "#DFCBAF"
 

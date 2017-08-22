@@ -1,8 +1,9 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.2
+import "../models"
 
 Rectangle {
-    property var paletteModel
+    property PaletteModel paletteModel
 
     signal bookmark(int id)
 
