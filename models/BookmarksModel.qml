@@ -18,6 +18,7 @@ Item {
     }
 
     function checkBookmark(id) {
+        // check if bookmark already exists
         try {
             console.log("Opening db")
             var db = LocalStorage.openDatabaseSync("bookmarksDB", "0.1", "DB for bookmarks", 500)
@@ -53,6 +54,7 @@ Item {
     }
 
     function refreshBookmarks() {
+        // load bookmarks into model
         try {
             console.log("Opening db")
             var db = LocalStorage.openDatabaseSync("bookmarksDB", "0.1", "DB for bookmarks", 500)
@@ -83,6 +85,7 @@ Item {
     }
 
     function dropBookmarks() {
+        // drop table if something went wrong
         try {
             var db = LocalStorage.openDatabaseSync("bookmarksDB", "0.1", "DB for bookmarks", 500)
             db.transaction(function(tx) {
@@ -95,6 +98,7 @@ Item {
     }
 
     Component.onCompleted: {
+        // create/load table then load bookmarks into model
         init()
         refreshBookmarks()
     }
