@@ -3,7 +3,6 @@ import QtQuick 2.0
 Item {
     id: model
 
-    property var dummy: "wqr"
     property ListModel palettes: ListModel { }
 
     function fromJSObject(obj) {
