@@ -1,3 +1,5 @@
+.pragma library
+
 function Request(url) {
     var _url = url
 
