@@ -9,7 +9,7 @@ Window {
     visible: true
     width: 480
     height: 640
-    title: qsTr("Hello World")
+    title: qsTr("Palette Viewer")
 
     PaletteModel {
         id: pm
@@ -28,16 +28,8 @@ Window {
             paletteModel: pm
         }
 
-        Rectangle {
-            color: "lightgray"
-            ListView {
-                anchors.fill: parent
-                spacing: 100
-                model: pim.palettes
-                delegate: Palette {
-                    paletteModel: palette
-                }
-            }
+        PaletteIndex {
+            paletteIndexModel: pim
         }
 
         Text {
