@@ -3,14 +3,7 @@ import QtQuick.LocalStorage 2.0
 
 Item {
     property ListModel bookmarks: ListModel { }
-//    function getHandle() {
-//        try {
-//            var db = LocalStorage.openDatabaseSync("bookmarksDB", "0.1", "DB for bookmarks", 500)
-//        } catch (err) {
-//            console.error("Error creating table: " + err)
-//        }
-//        return db
-//    }
+
 
     function addBokmark(id) {
         try {
@@ -82,7 +75,6 @@ Item {
         try {
             db.transaction(function(tx) {
                 tx.executeSql("CREATE TABLE IF NOT EXISTS bookmarks (id INT UNIQUE)")
-                // should probably add UNIQUE
             })
             console.log("Database inited")
         } catch (err) {
