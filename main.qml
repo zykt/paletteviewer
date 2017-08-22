@@ -51,14 +51,9 @@ Window {
         var palette_json = Helpers.blockingRequest('http://www.colourlovers.com/api/palettes/random?format=json')
         var palette = JSON.parse(palette_json)[0]
         pm.fromJSObject(palette)
-        console.log(palette.colors)
-        console.log(pm.colors)
 
         var palettes_json = Helpers.blockingRequest("http://www.colourlovers.com/api/palettes/new?format=json")
         var palettes = JSON.parse(palettes_json)
         pim.fromJSObject(palettes)
-        console.log(pim.palettes.get(0))
-
-        console.log("Completed")
     }
 }
