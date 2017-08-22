@@ -25,3 +25,16 @@ function Request(url) {
 
     return request
 }
+
+function blockingRequest(url) {
+    var request = new XMLHttpRequest()
+    request.open('GET', url, false)
+    request.send(null)
+
+    if (request.status === 200) {
+        return request.responseText
+    } else {
+        console.error("Request Failed at: " + url)
+        return null
+    }
+}
