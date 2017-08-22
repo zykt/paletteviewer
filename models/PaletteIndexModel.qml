@@ -9,7 +9,6 @@ Item {
         var palette
         for (var i in obj) {
             palette = Qt.createComponent("PaletteModel.qml").createObject(null)
-            console.log(palette)
             palette.fromJSObject(obj[i])
             palettes.append({ palette: palette })
         }

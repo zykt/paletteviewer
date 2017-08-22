@@ -20,7 +20,7 @@ Rectangle {
                 text: "★"
                 onClicked: {
                     bookmark(paletteModel.id)
-                    console.log("Bookmark: " + paletteModel.id)
+                    console.log("Bookmark clicked: " + paletteModel.id)
                 }
             }
         }
