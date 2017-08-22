@@ -19,21 +19,36 @@ Window {
         id: pim
     }
 
+    BookmarksModel {
+        id: bm
+    }
+
     SwipeView {
         id: view
         currentIndex: 0
         anchors.fill: parent
 
         Palette {
+            id: palette
             paletteModel: pm
+            onBookmark: {
+                if (bm.checkBookmark(id)) {
+                    // bookmark exists, gonna unbookmark it now
+                    console.log("Unbookmarking " + id)
+                    bm.deleteBookmark(id)
+                } else {
+                    bm.addBokmark(id)
+                }
+                bm.refreshBookmarks()
+            }
         }
 
         PaletteIndex {
             paletteIndexModel: pim
         }
 
-        Text {
-            text: "favourites"
+        Bookmarks {
+            bookmarksModel: bm
         }
     }
 
@@ -55,5 +70,6 @@ Window {
         var palettes_json = Helpers.blockingRequest("http://www.colourlovers.com/api/palettes/new?format=json")
         var palettes = JSON.parse(palettes_json)
         pim.fromJSObject(palettes)
+
     }
 }
