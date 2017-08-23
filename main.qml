@@ -25,13 +25,7 @@ ApplicationWindow {
 
     header: Selector {
         id: selector
-
         currentIndex: view.currentIndex
-
-        anchors {
-            top: parent.top
-        }
-
     }
 
     SwipeView {
