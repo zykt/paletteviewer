@@ -8,5 +8,6 @@
         <file>views/PaletteIndex.qml</file>
         <file>models/BookmarksModel.qml</file>
         <file>views/Bookmarks.qml</file>
+        <file>views/Selector.qml</file>
     </qresource>
 </RCC>

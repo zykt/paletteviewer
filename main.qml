@@ -5,7 +5,7 @@ import "models"
 import "views"
 import "modules/helpers.js" as Helpers
 
-Window {
+ApplicationWindow {
     visible: true
     width: 480
     height: 640
@@ -23,9 +23,20 @@ Window {
         id: bm
     }
 
+    header: Selector {
+        id: selector
+
+        currentIndex: view.currentIndex
+
+        anchors {
+            top: parent.top
+        }
+
+    }
+
     SwipeView {
         id: view
-        currentIndex: 0
+        currentIndex: selector.currentIndex
         anchors.fill: parent
 
         Palette {
@@ -52,15 +63,7 @@ Window {
         }
     }
 
-    PageIndicator {
-        id: indicator
 
-        count: view.count
-        currentIndex: view.currentIndex
-
-        anchors.bottom: view.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
 
     Component.onCompleted: {
         var palette_json = Helpers.blockingRequest('http://www.colourlovers.com/api/palettes/random?format=json')
